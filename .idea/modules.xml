@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphdb-exploration.iml" filepath="$PROJECT_DIR$/.idea/modules/graphdb-exploration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphdb-exploration_main.iml" filepath="$PROJECT_DIR$/.idea/modules/graphdb-exploration_main.iml" group="graphdb-exploration" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphdb-exploration_test.iml" filepath="$PROJECT_DIR$/.idea/modules/graphdb-exploration_test.iml" group="graphdb-exploration" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/graphdb-exploration_tools.iml" filepath="$PROJECT_DIR$/.idea/modules/graphdb-exploration_tools.iml" group="graphdb-exploration" />
+    </modules>
+  </component>
+</project>

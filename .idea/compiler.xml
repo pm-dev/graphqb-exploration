@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="graphdb-exploration_main" target="1.8" />
+      <module name="graphdb-exploration_test" target="1.8" />
+      <module name="graphdb-exploration_tools" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
