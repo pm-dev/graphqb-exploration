@@ -7,7 +7,6 @@ The application was written using:
 - [Kotlin](https://kotlinlang.org/)
 - [Jetbrains Exposed](https://github.com/JetBrains/Exposed) type-safe SQL wrapper
 - [Spring Boot](https://projects.spring.io/spring-boot/)
-- [Gradle](https://gradle.org/)
 - [GraphQL](http://graphql.org/)
 - [GraphQL Tools](https://github.com/graphql-java/graphql-java-tools)
 
