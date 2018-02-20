@@ -5,7 +5,6 @@ This repository demonstrates how to implement a graph-based server architecture.
 The application was written using:
 
 - [Kotlin](https://kotlinlang.org/)
-- [PostgreSQL](https://www.postgresql.org/)
 - [Jetbrains Exposed](https://github.com/JetBrains/Exposed) type-safe SQL wrapper
 - [Spring Boot](https://projects.spring.io/spring-boot/)
 - [Gradle](https://gradle.org/)

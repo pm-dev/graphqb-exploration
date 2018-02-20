@@ -1,6 +1,5 @@
 package com.framework
 
-import com.starwars.repositories.config.DataSourceFactory
 import com.starwars.repositories.config.TransactionManagerFactory
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
@@ -16,12 +15,8 @@ import javax.sql.DataSource
 @EnableAutoConfiguration
 @ComponentScan(basePackages = ["com.framework", "com.starwars"])
 class Application(
-        val dataSourceFactory: DataSourceFactory,
         val transactionManagerFactory: TransactionManagerFactory
 ) {
-    @Bean
-    fun dataSource() = dataSourceFactory()
-
     @Bean
     fun transactionManager(dataSource: DataSource) = transactionManagerFactory(dataSource)
 }

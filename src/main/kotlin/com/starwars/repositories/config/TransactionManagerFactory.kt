@@ -13,7 +13,6 @@ class TransactionManagerFactory {
         val manager = SpringTransactionManager(
                 dataSource = dataSource,
                 defaultIsolationLevel = Connection.TRANSACTION_SERIALIZABLE)
-        manager.isEnforceReadOnly = true
         manager.isNestedTransactionAllowed = false
         manager.isRollbackOnCommitFailure = true
         return manager

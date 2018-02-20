@@ -77,18 +77,14 @@ dependencies {
     compile('org.jetbrains.exposed:exposed:0.9.1')
     compile('org.jetbrains.exposed:spring-transaction:0.9.1')
 
-    // Postgres Driver
-    compile('org.postgresql:postgresql:42.1.4')
-    compile('ru.yandex.qatools.embed:postgresql-embedded:2.5')
-
     // Tools
     toolsCompile sourceSets.main.output
     toolsCompile configurations.compile
 
+    runtime('com.h2database:h2')
 
     // Testing
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile('com.h2database:h2:1.4.194')
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
