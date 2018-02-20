@@ -242,7 +242,7 @@ interface ExposedReadRepository : NodeReadRepository, EdgeReadRepository {
                         resultNode[Nodes.attributes],
                         resultNode[Nodes.createdAt])
                 .select { Nodes.pk eq from.pk }
-                .map { it.toNode<TO>() }
+                .map { it.toNode<TO>(resultNode) }
     }
 
     private fun <TYPE : Node> ResultRow.toNode(alias: Alias<Nodes>? = null): TYPE =

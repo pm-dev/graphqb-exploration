@@ -50,39 +50,39 @@ interface NodeReadRepository {
 
 inline fun <reified TYPE: Node> NodeReadRepository.fetch(
         pk: PrimaryKey,
-        attributesRegex: String? = null,
+        attributesContains: String? = null,
         createdSince: Instant? = null
 ): TYPE? =
         select<TYPE>(
                 where = NodeDBFilter(
                         pks = listOf(pk),
                         restrictTo =  TYPE::class.nodeTypes,
-                        attributesRegex = attributesRegex,
+                        attributesContains = attributesContains,
                         createdSince = createdSince))
                 .optional()
 
 inline fun <reified TYPE: Node> NodeReadRepository.fetch(
         pks: Collection<PrimaryKey>? = null,
-        attributesRegex: String? = null,
+        attributesContains: String? = null,
         createdSince: Instant? = null
 ): List<TYPE> =
         select(
                 where = NodeDBFilter(
                         pks = pks,
                         restrictTo = TYPE::class.nodeTypes,
-                        attributesRegex = attributesRegex,
+                        attributesContains = attributesContains,
                         createdSince = createdSince))
 
 inline fun <reified TYPE: Node> NodeReadRepository.fetch(
         vararg pks: PrimaryKey,
-        attributesRegex: String? = null,
+        attributesContains: String? = null,
         createdSince: Instant? = null
 ): List<TYPE> =
         select(
                 where = NodeDBFilter(
                         pks = pks.asList(),
                         restrictTo = TYPE::class.nodeTypes,
-                        attributesRegex = attributesRegex,
+                        attributesContains = attributesContains,
                         createdSince = createdSince))
 
 fun <T> Iterable<T>.optional(): T? = if (!iterator().hasNext()) null else single()

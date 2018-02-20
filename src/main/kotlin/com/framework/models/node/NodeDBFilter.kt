@@ -5,33 +5,34 @@ import com.framework.models.NodeType
 import com.framework.models.PrimaryKey
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.inList
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.like
 import java.time.Instant
 
 class NodeDBFilter(
         val pks: Collection<PrimaryKey>? = null,
         val restrictTo: Set<NodeType>? = null,
-        val attributesRegex: String? = null,
+        val attributesContains: String? = null,
         val createdSince: Instant? = null
 ) {
 
     constructor(vararg pks: PrimaryKey,
                 restrictTo: Set<NodeType>? = null,
-                attributesRegex: String? = null,
+                attributesContains: String? = null,
                 createdSince: Instant? = null
     ) : this(
             pks = pks.asList(),
             restrictTo = restrictTo,
-            attributesRegex = attributesRegex,
+            attributesContains = attributesContains,
             createdSince = createdSince)
 
     constructor(pk: PrimaryKey,
                 restrictTo:Set<NodeType>? = null,
-                attributesRegex: String? = null,
+                attributesContains: String? = null,
                 createdSince: Instant? = null
     ) : this(
             pks = listOf(pk),
             restrictTo = restrictTo,
-            attributesRegex = attributesRegex,
+            attributesContains = attributesContains,
             createdSince = createdSince)
 
 
@@ -43,8 +44,8 @@ class NodeDBFilter(
         (alias?.let { it[Nodes.type] } ?: Nodes.type) inList restrictTo
     }
 
-    private fun attributesFilter(alias: Alias<Nodes>?) = attributesRegex?.let {
-        RegexpOp(alias?.let { it[Nodes.attributes] } ?: Nodes.attributes, stringParam(attributesRegex))
+    private fun attributesFilter(alias: Alias<Nodes>?) = attributesContains?.let {
+        LikeOp(alias?.let { it[Nodes.attributes] } ?: Nodes.attributes, stringParam("%$attributesContains%"))
     }
 
     private fun createdSinceFilter(alias: Alias<Nodes>?) = createdSince?.let {
