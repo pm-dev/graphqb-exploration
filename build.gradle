@@ -34,7 +34,7 @@ repositories {
     maven { url "https://dl.bintray.com/kotlin/exposed" }
 }
 
-mainClassName = 'recall.open.ApplicationKt'
+mainClassName = 'com.framework.ApplicationKt'
 
 sourceSets {
     tools {
