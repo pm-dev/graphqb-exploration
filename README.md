@@ -1,6 +1,6 @@
 # GraphDB
 
-This repository demonstrates how to implement a graph-based web application architecture. It is written in Kotlin and exposes a GraphQL interface. It is based on a blog post from [Excuse The Disruption](http://www.excusethedisruption.com/writing-a-graphql-server-in-kotlin/)
+This repository demonstrates how to implement a graph-based web application architecture. It is written in Kotlin and exposes a GraphQL interface.
 
 The application was written using:
 
